@@ -30,7 +30,7 @@
 - Inject data into components using rng from JSON
 - User will press start to insert character into the starting position
 - User will use arrows keys to move
-    - This will be done traversing the matrix increment/decrementing the x and y values with x being the position inside the nested array and y being the position of the nested array 
+    - This will be done traversing the matrix increment/decrementing the x and y values with 'x' being the position inside the nested array and 'y' being the position of the nested array 
     - Active tiles will be marked true when the user is on them while all others will be false
 - JSON data for each object/tile will affect the user hp and movement, this will be done with state variables 
 
