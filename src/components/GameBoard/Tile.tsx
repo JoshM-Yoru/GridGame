@@ -1,27 +1,44 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { GameContext } from '../../context/GameProvider';
+import { GameContextState } from '../../interfaces/Game';
 
 interface TileProps {
     ground: string;
     description: string;
     damage: number;
     exhaustion: number;
-    active: boolean;
-    position: number;
+    tilePosition: number;
 }
 
-const Tile: React.FC<TileProps> = ({ ground, description, damage, exhaustion, active, position }) => {
+const Tile: React.FC<TileProps> = ({ ground, description, damage, exhaustion, tilePosition }) => {
 
-    console.log(ground);
+    const { playerPosition, setPlayerPosition } = useContext(GameContext) as GameContextState;
+
+    document.onkeydown = function(e) {
+        if (e.code === 'ArrowUp' || e.code === 'KeyK') {
+            console.log("Up key is pressed.");
+            playerPosition - 100 >= 0 && setPlayerPosition(playerPosition - 100);
+        }
+        if (e.code === 'ArrowDown' || e.code === 'KeyJ') {
+            console.log("Down key is pressed.");
+            playerPosition + 100 < 10000 && setPlayerPosition(playerPosition + 100);
+        }
+        if (e.code === 'ArrowLeft' || e.code === 'KeyH') {
+            console.log("Down key is pressed.");
+            (playerPosition - 1) % 10 !== 9 && playerPosition - 1 >= 0 && setPlayerPosition(playerPosition - 1);
+        }
+        if (e.code === 'ArrowRight' || e.code === 'KeyL') {
+            console.log("Down key is pressed.");
+            (playerPosition + 1) % 100 !== 0 && playerPosition + 1 < 10000 && setPlayerPosition(playerPosition + 1);
+        }
+    }
 
     return (
-        <div style={{ backgroundImage: `url(${ground})`, backgroundSize: 'cover', position: 'relative', border: '1px solid pink', padding: '3px', width: '100px', height: '100px' }}>
-            <p style={{ position: 'absolute', top: '5vh', zIndex: '4' }} >Postion: {position}</p>
-            {/* <img src={ground} alt={description} style={{ height: '100px', width: 'auto', position: 'absolute' }} /> */}
-            <p style={{ position: 'absolute', top: '0' }} >Damage: {damage}</p>
-            <p style={{ position: 'absolute', inset: '10vh 0 0 0' }} >Exhaustion: {exhaustion}</p>
+        <div style={{ backgroundImage: `url(${ground})`, backgroundSize: 'cover', position: 'relative', width: 'fit-content', height: '20px' }}>
+            {tilePosition}
             {
-                active &&
-                <div style={{ margin: 'auto', zIndex: '10', background: 'pink', height: '80px', width: '80px', borderRadius: '40px' }}></div>
+                playerPosition === tilePosition &&
+                <div style={{ margin: 'auto', padding: '0', zIndex: '10', background: 'yellow', height: '10px', width: '10px', borderRadius: '40px' }}></div>
             }
         </div>
     )

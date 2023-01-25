@@ -1,11 +1,14 @@
 import './App.css'
 import GameContainer from './components/GameBoard/GameContainer'
+import GameProvider from './context/GameProvider'
 
 function App() {
 
     return (
         <div className="App">
-            <GameContainer />
+            <GameProvider>
+                <GameContainer />
+            </GameProvider>
         </div>
     )
 }
