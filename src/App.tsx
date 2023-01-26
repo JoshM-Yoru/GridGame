@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import './App.css'
 import GameContainer from './components/GameBoard/GameContainer'
 import Instructions from './components/Instructions'
@@ -7,8 +7,12 @@ import { finish, GameContext, start } from './context/GameProvider'
 import { GameContextState } from './interfaces/Game'
 
 function App() {
-    const { playerPosition, health, movement, startGame, setStartGame } = useContext(GameContext) as GameContextState;
-    const test = () => {
+
+    const { playerPosition, health, movement, startGame, setStartGame, setHardDifficulty } = useContext(GameContext) as GameContextState;
+
+    const [difficultySelected, setDifficultySelected] = useState<boolean>(false);
+
+    const winOrLose = () => {
         if (health <= 0 || movement <= 0) {
             return <h2 className='game-status'>Game Over</h2>
 
@@ -18,6 +22,24 @@ function App() {
             return <GameContainer />
         }
     }
+
+    const difficultySelect = () => {
+        if (!startGame && !difficultySelected) {
+            return (
+                <>
+                    <button onClick={() => { setHardDifficulty(false); setDifficultySelected(true) }}>Normal Difficulty</button>
+                    <button onClick={() => { setHardDifficulty(true); setDifficultySelected(true) }}> Hard Difficulty</button >
+                </>
+            )
+        } else if (!startGame && difficultySelected) {
+            return (
+                <>
+                    <button onClick={() => setStartGame(true)}>Start Game</button>
+                </>
+            )
+        }
+    }
+
     return (
         <div className="App">
             <div className='info-wrapper'>
@@ -26,7 +48,7 @@ function App() {
             </div>
             <div className='game-wrapper'>
                 {
-                    !startGame ? <button onClick={() => setStartGame(true)}>Start Game</button> : test()
+                    startGame ? winOrLose() : difficultySelect()
                 }
             </div>
         </div>

@@ -1,4 +1,4 @@
-export interface Tile {
+export interface TileInterface {
     ground: string;
     description: string;
     damage: number;
@@ -28,4 +28,6 @@ export interface GameContextState {
     setNumbers: (b: boolean) => void;
     startGame: boolean;
     setStartGame: (b: boolean) => void;
+    hardDifficulty: boolean;
+    setHardDifficulty: (b: boolean) => void;
 }

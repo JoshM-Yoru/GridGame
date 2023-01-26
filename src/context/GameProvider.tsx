@@ -7,8 +7,8 @@ interface ProviderProps {
     children: React.ReactNode;
 }
 
-export const start: number = Math.floor(Math.random() * (85 - 15) + 15);
-export const finish: number = Math.floor(Math.random() * (9985 - 9915) + 9915);
+export const start: number = Math.floor(Math.random() * (80 - 20) + 15);
+export const finish: number = Math.floor(Math.random() * (9980 - 9920) + 9920);
 
 const GameProvider: React.FC<ProviderProps> = ({ children }) => {
     const [health, setHealth] = useState<number>(100);
@@ -18,10 +18,13 @@ const GameProvider: React.FC<ProviderProps> = ({ children }) => {
     const [loading, setLoading] = useState<boolean>(true);
     const [numbers, setNumbers] = useState<boolean>(false);
     const [startGame, setStartGame] = useState<boolean>(false);
+    const [hardDifficulty, setHardDifficulty] = useState<boolean>(false);
 
     return (
         <GameContext.Provider
             value={{
+                hardDifficulty,
+                setHardDifficulty,
                 startGame,
                 setStartGame,
                 numbers,

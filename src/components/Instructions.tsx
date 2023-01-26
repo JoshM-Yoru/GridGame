@@ -2,6 +2,7 @@ import React from "react";
 import "./Instructions.css";
 
 const Instructions = () => {
+
     return (
         <div className="instructions-container">
             <h1>Welcome To The Grid Game</h1>

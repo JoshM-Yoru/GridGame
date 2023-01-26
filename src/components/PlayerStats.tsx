@@ -7,7 +7,6 @@ const PlayerStats = () => {
 
     const { health, movement, numbers, setNumbers, playerPosition } = useContext(GameContext) as GameContextState;
 
-
     return (
         <div className='stats-container'>
             {
