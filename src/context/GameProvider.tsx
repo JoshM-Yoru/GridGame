@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { GameContextState, Tile } from "../interfaces/Game";
+import { GameContextState } from "../interfaces/Game";
 
 export const GameContext = React.createContext<GameContextState | null>(null);
 
