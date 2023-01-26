@@ -29,7 +29,7 @@ const Instructions = () => {
                     </tr>
                     <tr>
                         <td>
-                            <img src="src/assets/grass.jpg" alt="Grass" />
+                            <img src="/assets/grass.jpg" alt="Grass" />
                         </td>
                         <td>Normal Grass. Walk On!</td>
                         <td>-0 hp</td>
@@ -37,7 +37,7 @@ const Instructions = () => {
                     </tr>
                     <tr>
                         <td>
-                            <img src="src/assets/ice.webp" alt="Ice" />
+                            <img src="/assets/ice.webp" alt="Ice" />
                         </td>
                         <td>
                             Ice. You can slide onto the next spot but you might
@@ -48,7 +48,7 @@ const Instructions = () => {
                     </tr>
                     <tr>
                         <td>
-                            <img src="src/assets/mud.webp" alt="Mud" />
+                            <img src="/assets/mud.webp" alt="Mud" />
                         </td>
                         <td>
                             Mud. Move across it if you must, just don't get
@@ -59,7 +59,7 @@ const Instructions = () => {
                     </tr>
                     <tr>
                         <td>
-                            <img src="src/assets/lava.webp" alt="Lava" />
+                            <img src="/assets/lava.webp" alt="Lava" />
                         </td>
                         <td>Lava. Just don't.</td>
                         <td>-50 hp</td>
@@ -67,7 +67,7 @@ const Instructions = () => {
                     </tr>
                     <tr>
                         <td>
-                            <img src="src/assets/stone.webp" alt="Start" />
+                            <img src="/assets/stone.webp" alt="Start" />
                         </td>
                         <td>Starting Position.</td>
                         <td>-0 hp</td>
@@ -75,7 +75,7 @@ const Instructions = () => {
                     </tr>
                     <tr>
                         <td>
-                            <img src="src/assets/gold.webp" alt="Finish" />
+                            <img src="/assets/gold.webp" alt="Finish" />
                         </td>
                         <td>Finish Line. There is gold here!</td>
                         <td>-0 hp</td>
