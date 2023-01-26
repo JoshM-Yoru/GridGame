@@ -38,5 +38,4 @@
 
 - Will the start and ending points be random or just hard coded at opposite ends?
 - Will the user be able to see all, some, or none of the terrain tiles?
-- Will all the tiles be random each game?
 - Is there a limit to the amount of modified tiles?

@@ -1,5 +1,4 @@
 #root {
-  margin: 0 auto;
   text-align: center;
 }
 
@@ -30,9 +29,15 @@
   }
 }
 
-.card {
-}
-
 .read-the-docs {
   color: #888;
 }
+
+.App {
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    gap: 10vh;
+}
+

@@ -1,0 +1,11 @@
+.stats-container {
+    display: flex;
+    width: fit-content;
+    margin: 5vh auto;
+    border: 1px solid red;
+    z-index: 10;
+}
+
+h2 {
+    margin: 50px;
+}
