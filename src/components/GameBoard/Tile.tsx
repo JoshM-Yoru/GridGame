@@ -46,15 +46,18 @@ const Tile: React.FC<TileProps> = ({ ground, description, damage, exhaustion, ti
         }
     }
 
-    useEffect(() => {
+    const centerPlayer = () => {
         if (playerRef.current) {
             playerRef.current.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
         }
+    }
 
+    useEffect(() => {
+        centerPlayer();
     }, [])
 
     return (
-        <div className='tile-container' style={{ backgroundImage: `url(${ground})` }}>
+        <div onClick={centerPlayer} className='tile-container' style={{ backgroundImage: `url(${ground})` }}>
             {
                 numbers && <p style={{ fontSize: '8px', position: 'absolute' }}>{tilePosition}</p>
             }
