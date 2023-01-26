@@ -2,6 +2,7 @@
 
 ### Live Demo Hosted on Vercel
 
+[Click Here](https://grid-game-ten.vercel.app/) to visit the site
 
 ### To Use This Repository Locally
 
