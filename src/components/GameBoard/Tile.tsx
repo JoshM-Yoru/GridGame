@@ -14,6 +14,8 @@ const Tile: React.FC<TileProps> = ({ ground, description, damage, exhaustion, ti
 
     const { numbers, gameBoard, playerPosition, setPlayerPosition, health, setHealth, movement, setMovement } = useContext(GameContext) as GameContextState;
 
+    const playerRef = useRef<HTMLDivElement>(null);
+
     if (tilePosition == playerPosition) {
 
         document.onkeydown = function(e) {
@@ -21,24 +23,35 @@ const Tile: React.FC<TileProps> = ({ ground, description, damage, exhaustion, ti
                 playerPosition - 100 >= 0 && setPlayerPosition(playerPosition - 100);
                 playerPosition - 100 >= 0 && setHealth(health - gameBoard[playerPosition - 100].props.damage);
                 playerPosition - 100 >= 0 && setMovement(movement - gameBoard[playerPosition - 100].props.exhaustion);
+                playerRef.current?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
             }
             if (e.code === 'ArrowDown' || e.code === 'KeyJ') {
                 playerPosition + 100 < 10000 && setPlayerPosition(playerPosition + 100);
                 playerPosition + 100 < 10000 && setHealth(health - gameBoard[playerPosition + 100].props.damage);
                 playerPosition + 100 < 10000 && setMovement(movement - gameBoard[playerPosition + 100].props.exhaustion);
+                playerRef.current?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
             }
             if (e.code === 'ArrowLeft' || e.code === 'KeyH') {
                 playerPosition % 100 !== 0 && playerPosition - 1 >= 0 && setPlayerPosition(playerPosition - 1);
                 playerPosition % 100 !== 0 && setHealth(health - gameBoard[playerPosition - 1].props.damage);
                 playerPosition % 100 !== 0 && setMovement(movement - gameBoard[playerPosition - 1].props.exhaustion);
+                playerRef.current?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
             }
             if (e.code === 'ArrowRight' || e.code === 'KeyL') {
                 (playerPosition + 1) % 100 !== 0 && playerPosition + 1 < 10000 && setPlayerPosition(playerPosition + 1);
                 (playerPosition + 1) % 100 !== 0 && playerPosition + 1 < 10000 && setHealth(health - gameBoard[playerPosition + 1].props.damage);
                 (playerPosition + 1) % 100 !== 0 && playerPosition + 1 < 10000 && setMovement(movement - gameBoard[playerPosition + 1].props.exhaustion);
+                playerRef.current?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
             }
         }
     }
+
+    useEffect(() => {
+        if (playerRef.current) {
+            playerRef.current.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+        }
+
+    }, [])
 
     return (
         <div className='tile-container' style={{ backgroundImage: `url(${ground})` }}>
@@ -47,7 +60,7 @@ const Tile: React.FC<TileProps> = ({ ground, description, damage, exhaustion, ti
             }
             {
                 tilePosition === playerPosition &&
-                <div className='player' style={{ display: 'flex' }}></div>
+                <div className='player' ref={playerRef} style={{ display: 'flex' }}></div>
             }
         </div>
     )
