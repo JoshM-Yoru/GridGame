@@ -1,5 +1,5 @@
 import React from "react";
-import './Instructions.css'
+import "./Instructions.css";
 
 const Instructions = () => {
     return (
@@ -11,7 +11,13 @@ const Instructions = () => {
                 running out of movement.
             </p>
             <p>
-                The level is a 100 x 100 grid with the start and finish being completely opposite of each other.
+                The level is a 100 x 100 grid with the start and finish being
+                completely opposite of each other.
+            </p>
+            <p>
+                Below is a legend of the terrain, your current stats, and a toggle to show
+                starting and ending squares numbers as well as all numbers of the tiles. Just scroll in the game window to
+                find your player and then use the arrow keys to move around
             </p>
             <table>
                 <tbody>
@@ -33,7 +39,10 @@ const Instructions = () => {
                         <td>
                             <img src="src/assets/ice.webp" alt="Ice" />
                         </td>
-                        <td>Ice. You can slide onto the next spot but you might slip!</td>
+                        <td>
+                            Ice. You can slide onto the next spot but you might
+                            slip!
+                        </td>
                         <td>-5 hp</td>
                         <td>-0 movement</td>
                     </tr>
@@ -41,7 +50,10 @@ const Instructions = () => {
                         <td>
                             <img src="src/assets/mud.webp" alt="Mud" />
                         </td>
-                        <td>Mud. Move across it if you must, just don't get stuck!</td>
+                        <td>
+                            Mud. Move across it if you must, just don't get
+                            stuck!
+                        </td>
                         <td>-10 hp</td>
                         <td>-5 movement</td>
                     </tr>

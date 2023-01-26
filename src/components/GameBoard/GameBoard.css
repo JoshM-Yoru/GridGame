@@ -1,13 +1,19 @@
 .game-container {
     margin: auto;
-    padding: 2rem;
     width: 3000px;
     height: 3000px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* transform: translateX(-90vh); */
+    position: relative;
 }
+
+.game-container > h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .tile-container {
     display: flex;
     justify-content: center;
@@ -23,7 +29,8 @@
     padding: 0;
     z-index: 10;
     background: yellow;
-    height: 15px;
-    width: 15px;
+    height: 20px;
+    width: 20px;
     border-radius: 40px;
 }
+

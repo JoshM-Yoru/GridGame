@@ -24,8 +24,6 @@ export interface GameContextState {
     setGameBoard: (a: any) => void;
     loading: boolean;
     setLoading: (b: boolean) => void;
-    gameOver: boolean;
-    setGameOver: (b: boolean) => void;
-    gameWon: boolean;
-    setGameWon: (b: boolean) => void;
+    numbers: boolean;
+    setNumbers: (b: boolean) => void;
 }

@@ -41,3 +41,21 @@
     gap: 10vh;
 }
 
+.game-wrapper {
+    border: 10px solid #444;
+    width: 95vh;
+    height: 95vh;
+    overflow: scroll;
+    display: grid;
+    place-items: center;
+}
+
+.game-status {
+    font-size: 7rem;
+    background-image: url('../src/assets/lava.webp');
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: cover;
+    background-position: 0%;
+    padding: 3rem;
+}

@@ -1,6 +1,6 @@
 .instructions-container {
     width: fit-content; 
-    margin-left: 5vh;
+    max-width: 700px;
 }
 
 table {

@@ -7,18 +7,27 @@ import { finish, GameContext, start } from './context/GameProvider'
 import { GameContextState } from './interfaces/Game'
 
 function App() {
+    const { playerPosition, health, movement } = useContext(GameContext) as GameContextState;
+    const test = () => {
+        if (health <= 0 || movement <= 0) {
+            return <h2 className='game-status'>Game Over</h2>
 
-    const { loading } = useContext(GameContext) as GameContextState;
-
+        } else if (playerPosition === finish) {
+            return <h2 className='game-status'>You Win</h2>
+        } else {
+            return <GameContainer />
+        }
+    }
     return (
         <div className="App">
             <div className='info-wrapper'>
                 <Instructions />
                 <PlayerStats />
-                <p>Starting Position: {start} | Finishing Positon: {finish}</p>
             </div>
-            <div className='game-wrapper' style={{ width: '90vh', height: '90vh', overflow: 'scroll' }}>
-                <GameContainer />
+            <div className='game-wrapper'>
+                {
+                    test()
+                }
             </div>
         </div>
     )
