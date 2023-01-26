@@ -8,7 +8,7 @@ const Instructions = () => {
             <h3>Instructions:</h3>
             <p>
                 Navigate the level from the start to finish without dying or
-                running out of movement.
+                running out of movement by using the arrow keys or h,j,k,l.
             </p>
             <p>
                 The level is a 100 x 100 grid with the start and finish being

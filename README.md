@@ -17,6 +17,10 @@ Enter your terminal and do the following:
 - Increase performance by decreasing re-renders if possible
 - Style Game Better
 
+### Notes
+
+- This game currently only works for desktop as you use the arrow keys or h,j,k,l to move
+
 #### Parameters
 
 - 100 x 100 grid
