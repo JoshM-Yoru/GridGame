@@ -17,10 +17,13 @@ const GameProvider: React.FC<ProviderProps> = ({ children }) => {
     const [gameBoard, setGameBoard] = useState(Array(10000));
     const [loading, setLoading] = useState<boolean>(true);
     const [numbers, setNumbers] = useState<boolean>(false);
+    const [startGame, setStartGame] = useState<boolean>(false);
 
     return (
         <GameContext.Provider
             value={{
+                startGame,
+                setStartGame,
                 numbers,
                 setNumbers,
                 loading,

@@ -7,7 +7,7 @@ import { finish, GameContext, start } from './context/GameProvider'
 import { GameContextState } from './interfaces/Game'
 
 function App() {
-    const { playerPosition, health, movement } = useContext(GameContext) as GameContextState;
+    const { playerPosition, health, movement, startGame, setStartGame } = useContext(GameContext) as GameContextState;
     const test = () => {
         if (health <= 0 || movement <= 0) {
             return <h2 className='game-status'>Game Over</h2>
@@ -26,7 +26,7 @@ function App() {
             </div>
             <div className='game-wrapper'>
                 {
-                    test()
+                    !startGame ? <button onClick={() => setStartGame(true)}>Start Game</button> : test()
                 }
             </div>
         </div>

@@ -26,4 +26,6 @@ export interface GameContextState {
     setLoading: (b: boolean) => void;
     numbers: boolean;
     setNumbers: (b: boolean) => void;
+    startGame: boolean;
+    setStartGame: (b: boolean) => void;
 }

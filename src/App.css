@@ -50,12 +50,28 @@
     place-items: center;
 }
 
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5577ff;
+}
+
+::-webkit-scrollbar-corner {
+  background: #222;
+}
+
 .game-status {
     font-size: 7rem;
-    background-image: url('../src/assets/lava.webp');
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: cover;
-    background-position: 0%;
     padding: 3rem;
 }
