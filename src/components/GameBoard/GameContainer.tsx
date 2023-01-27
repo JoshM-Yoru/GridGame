@@ -18,6 +18,7 @@ const GameContainer = () => {
             setGameBoard(
                 gameBoard.fill(true).map((_: any, index: any) => {
                     let tile = Math.floor(Math.random() * 20);
+                    if (index === start - 1 || index === start + 1 || index === start + 99 || index === start + 100 || index === start + 101) return < Tile key={index} tilePosition={index} ground={terrain[0].ground} description={terrain[0].description} damage={terrain[0].damage} exhaustion={terrain[0].exhaustion} />
                     if (index === start) return < Tile key={index} tilePosition={index} ground={terrain[21].ground} description={terrain[21].description} damage={terrain[21].damage} exhaustion={terrain[21].exhaustion} />
                     if (index === finish) return < Tile key={index} tilePosition={index} ground={terrain[20].ground} description={terrain[20].description} damage={terrain[20].damage} exhaustion={terrain[20].exhaustion} />
                     return < Tile key={index} tilePosition={index} ground={terrain[tile].ground} description={terrain[tile].description} damage={terrain[tile].damage} exhaustion={terrain[tile].exhaustion} />
