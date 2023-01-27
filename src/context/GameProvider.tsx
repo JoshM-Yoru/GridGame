@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { GameContextState, TileInterface } from "../interfaces/Game";
+import { GameContextState } from "../interfaces/Game";
 
 export const GameContext = React.createContext<GameContextState | null>(null);
 
@@ -14,7 +14,7 @@ const GameProvider: React.FC<ProviderProps> = ({ children }) => {
     const [health, setHealth] = useState<number>(100);
     const [movement, setMovement] = useState<number>(150);
     const [playerPosition, setPlayerPosition] = useState<number>(start);
-    const [gameBoard, setGameBoard] = useState<TileInterface | null>(Array(10000));
+    const [gameBoard, setGameBoard] = useState(Array(10000));
     const [loading, setLoading] = useState<boolean>(true);
     const [numbers, setNumbers] = useState<boolean>(false);
     const [startGame, setStartGame] = useState<boolean>(false);

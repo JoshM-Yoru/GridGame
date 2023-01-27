@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import Tile from "./Tile";
 import { terrainNormal, terrainHard } from "../../data/terrain.js";
 import { finish, GameContext, start } from "../../context/GameProvider";
