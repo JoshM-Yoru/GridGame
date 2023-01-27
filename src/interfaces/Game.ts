@@ -3,8 +3,7 @@ export interface TileInterface {
     description: string;
     damage: number;
     exhaustion: number;
-    position: number;
-    active: boolean;
+    tilePosition: number;
 }
 
 export interface Player {
@@ -20,8 +19,8 @@ export interface GameContextState {
     setMovement: (n: number) => void;
     playerPosition: number;
     setPlayerPosition: (n: number) => void;
-    gameBoard: any;
-    setGameBoard: (a: any) => void;
+    gameBoard: TileInterface[];
+    setGameBoard: (a: TileInterface[]) => void;
     loading: boolean;
     setLoading: (b: boolean) => void;
     numbers: boolean;

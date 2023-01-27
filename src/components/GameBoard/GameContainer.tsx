@@ -16,7 +16,7 @@ const GameContainer = () => {
     useEffect(() => {
         if (loading) {
             setGameBoard(
-                gameBoard.fill(true).map((_: any, index: any) => {
+                gameBoard.fill(true).map((_: null, index: number) => {
                     let tile = Math.floor(Math.random() * 20);
                     if (
                         index === start - 1 ||
