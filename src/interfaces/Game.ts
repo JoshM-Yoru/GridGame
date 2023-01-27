@@ -19,8 +19,8 @@ export interface GameContextState {
     setMovement: (n: number) => void;
     playerPosition: number;
     setPlayerPosition: (n: number) => void;
-    gameBoard: TileInterface[];
-    setGameBoard: (a: TileInterface[]) => void;
+    gameBoard: TileInterface[] | Element[];
+    setGameBoard: (a: TileInterface[] | Element[]) => void;
     loading: boolean;
     setLoading: (b: boolean) => void;
     numbers: boolean;
