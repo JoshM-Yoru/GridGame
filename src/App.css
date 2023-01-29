@@ -74,3 +74,9 @@
 .game-status {
     font-size: 5rem;
 }
+
+.difficulty {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
