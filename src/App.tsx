@@ -26,7 +26,7 @@ function App() {
     const difficultySelect = () => {
         if (!startGame && !difficultySelected) {
             return (
-                <div class="difficulty">
+                <div className="difficulty">
                     <button onClick={() => { setHardDifficulty(false); setDifficultySelected(true) }}>Normal Difficulty</button>
                     <button onClick={() => { setHardDifficulty(true); setDifficultySelected(true) }}> Hard Difficulty</button >
                 </div>
