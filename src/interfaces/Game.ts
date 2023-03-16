@@ -19,8 +19,6 @@ export interface GameContextState {
     setMovement: (n: number) => void;
     playerPosition: number;
     setPlayerPosition: (n: number) => void;
-    gameBoard: any;
-    setGameBoard: (a: any) => void;
     loading: boolean;
     setLoading: (b: boolean) => void;
     numbers: boolean;
@@ -29,4 +27,6 @@ export interface GameContextState {
     setStartGame: (b: boolean) => void;
     hardDifficulty: boolean;
     setHardDifficulty: (b: boolean) => void;
+    difficultySelected: boolean;
+    setDifficultySelected: (b: boolean) => void;
 }

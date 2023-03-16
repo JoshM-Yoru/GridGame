@@ -9,16 +9,17 @@ interface ProviderProps {
 
 export const start: number = Math.floor(Math.random() * (80 - 20) + 15);
 export const finish: number = Math.floor(Math.random() * (9980 - 9920) + 9920);
+export let tileArray = Array();
 
 const GameProvider: React.FC<ProviderProps> = ({ children }) => {
     const [health, setHealth] = useState<number>(100);
     const [movement, setMovement] = useState<number>(150);
     const [playerPosition, setPlayerPosition] = useState<number>(start);
-    const [gameBoard, setGameBoard] = useState(Array(10000));
     const [loading, setLoading] = useState<boolean>(true);
     const [numbers, setNumbers] = useState<boolean>(false);
     const [startGame, setStartGame] = useState<boolean>(false);
     const [hardDifficulty, setHardDifficulty] = useState<boolean>(false);
+    const [difficultySelected, setDifficultySelected] = useState<boolean>(false);
 
     return (
         <GameContext.Provider
@@ -37,8 +38,8 @@ const GameProvider: React.FC<ProviderProps> = ({ children }) => {
                 setMovement,
                 playerPosition,
                 setPlayerPosition,
-                gameBoard,
-                setGameBoard,
+                difficultySelected,
+                setDifficultySelected
             }}
         >
             {children}

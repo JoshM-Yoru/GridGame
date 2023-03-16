@@ -8,11 +8,10 @@ import { GameContextState } from './interfaces/Game'
 
 function App() {
 
-    const { playerPosition, health, movement, startGame, setStartGame, setHardDifficulty } = useContext(GameContext) as GameContextState;
+    const { playerPosition, health, movement, startGame, setStartGame, setHardDifficulty, difficultySelected, setDifficultySelected, setLoading } = useContext(GameContext) as GameContextState;
 
-    const [difficultySelected, setDifficultySelected] = useState<boolean>(false);
 
-    const winOrLose = () => {
+    const gameStatus = () => {
         if (health <= 0 || movement <= 0) {
             return <h2 className='game-status'>Game Over</h2>
 
@@ -48,7 +47,7 @@ function App() {
             </div>
             <div className='game-wrapper'>
                 {
-                    startGame ? winOrLose() : difficultySelect()
+                    startGame ? gameStatus() : difficultySelect()
                 }
             </div>
         </div>
