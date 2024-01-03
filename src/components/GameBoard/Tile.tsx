@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import { GameContext, tileArray } from '../../context/GameProvider';
 import { GameContextState } from '../../interfaces/Game';
 
@@ -20,6 +20,9 @@ const Tile: React.FC<TileProps> = ({ ground, tilePosition }) => {
     const centerPlayer = () => {
         playerRef.current?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
     }
+    useEffect(() => {
+        centerPlayer();
+    }, [playerPosition])
 
     document.onkeydown = function(e) {
         if (e.code === 'ArrowUp' || e.code === 'KeyK' && playerPosition - 100 >= 0) {
@@ -43,9 +46,6 @@ const Tile: React.FC<TileProps> = ({ ground, tilePosition }) => {
             setPlayerPosition(playerPosition + 1);
         }
     }
-
-    centerPlayer();
-
 
     return (
         <div onClick={centerPlayer} className='tile-container' style={{ backgroundImage: `url(${ground})` }}>
