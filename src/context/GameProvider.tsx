@@ -7,8 +7,7 @@ interface ProviderProps {
     children: React.ReactNode;
 }
 
-// export const start: number = Math.floor(Math.random() * (80 - 20) + 15);
-export const start: number = 99
+export const start: number = Math.floor(Math.random() * (80 - 20) + 15);
 export const finish: number = Math.floor(Math.random() * (9980 - 9920) + 9920);
 export let tileArray = Array();
 

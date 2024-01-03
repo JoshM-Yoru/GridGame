@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import Tile from "./Tile";
 import { terrainNormal, terrainHard } from "../../data/terrain.js";
 import { finish, GameContext, start, tileArray } from "../../context/GameProvider";
@@ -34,12 +34,13 @@ const GameContainer = () => {
                 if (index === finish) {
                     tileArray[index] = terrain[20];
                 }
-                tileArray.push(terrain[tile]);
+                tileArray[index] = terrain[tile];
                 index++
-            };            // );
+            };
             setLoading(false);
         }
     }, [difficultySelected]);
+
 
     return (
         <div className="game-container">

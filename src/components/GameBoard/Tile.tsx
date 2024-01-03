@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import { GameContext, tileArray } from '../../context/GameProvider';
 import { GameContextState } from '../../interfaces/Game';
 

@@ -1,14 +1,14 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import './App.css'
 import GameContainer from './components/GameBoard/GameContainer'
 import Instructions from './components/Instructions'
 import PlayerStats from './components/PlayerStats'
-import { finish, GameContext, start } from './context/GameProvider'
+import { finish, GameContext } from './context/GameProvider'
 import { GameContextState } from './interfaces/Game'
 
 function App() {
 
-    const { playerPosition, health, movement, startGame, setStartGame, setHardDifficulty, difficultySelected, setDifficultySelected, setLoading } = useContext(GameContext) as GameContextState;
+    const { playerPosition, health, movement, startGame, setStartGame, setHardDifficulty, difficultySelected, setDifficultySelected } = useContext(GameContext) as GameContextState;
 
 
     const gameStatus = () => {
