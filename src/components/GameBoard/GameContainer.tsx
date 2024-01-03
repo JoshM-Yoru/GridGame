@@ -34,7 +34,7 @@ const GameContainer = () => {
                 if (index === finish) {
                     tileArray[index] = terrain[20];
                 }
-                tileArray[index] = terrain[tile];
+                tileArray.push(terrain[tile]);
                 index++
             };
             setLoading(false);
